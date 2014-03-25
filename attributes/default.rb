@@ -109,6 +109,7 @@ when "redhat", "centos", "scientific", "oracle"
     default['postgresql']['client']['packages'] = ["postgresql#{node['postgresql']['version'].split('.').join}-devel"]
     default['postgresql']['server']['packages'] = ["postgresql#{node['postgresql']['version'].split('.').join}-server"]
     default['postgresql']['contrib']['packages'] = ["postgresql#{node['postgresql']['version'].split('.').join}-contrib"]
+    default['postgresql']['gis']['packages'] = ["postgis_#{node['postgresql']['version'].split('.').join}"]
   end
 
   if node['platform_version'].to_f >= 6.0 && node['postgresql']['version'] != '8.4'
